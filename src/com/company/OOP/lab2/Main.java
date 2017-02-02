@@ -20,6 +20,8 @@ public class Main {
                 "'p' - display all plan hours from list\n" +
                 "'f' - display all fact hours from list\n" +
                 "'s' - display size of list\n" +
+                "'%' - display deviations from plan in %\n" +
+                "'k' - display deviations from plan in kW/h\n" +
                 "'e' - exit");
 
         while (workOfProgram) {
@@ -32,28 +34,35 @@ public class Main {
                         System.out.print("Enter plan hours: ");
                         int planHours = scanner.nextInt();
                         departmentsList.add(new Department(planHours, factHours));
+                        System.out.println("Enter comand again: ");
                         break;
                     case "d":
                         departmentsList.displayAll();
+                        System.out.println("Enter comand again: ");
                         break;
                     case "c":
                         departmentsList.clear();
+                        System.out.println("Enter comand again: ");
                         break;
                     case "r":
                         System.out.print("Enter index of element: ");
                         int indexToRemove = scanner.nextInt();
                         System.out.println("Element " + departmentsList.remove(indexToRemove) + " is removed");
+                        System.out.println("Enter comand again: ");
                         break;
                     case "g":
                         System.out.print("Enter index of element: ");
                         int indexToGet = scanner.nextInt();
                         System.out.println(departmentsList.get(indexToGet));
+                        System.out.println("Enter comand again: ");
                         break;
                     case "p":
                         System.out.println(departmentsList.getAllPlanHours() + " hours");
+                        System.out.println("Enter comand again: ");
                         break;
                     case "f":
                         System.out.println(departmentsList.getAllFactHours() + " hours");
+                        System.out.println("Enter comand again: ");
                         break;
                     case "s":
                         if (departmentsList.isEmpty()) {
@@ -61,6 +70,19 @@ public class Main {
                         } else {
                             System.out.println(departmentsList.size() + " elements.");
                         }
+                        System.out.println("Enter comand again: ");
+                        break;
+                    case "%":
+                        System.out.print("Enter index of element: ");
+                        int indexToPer = scanner.nextInt();
+                        System.out.println(departmentsList.get(indexToPer).persentDeviationsFromPlan());
+                        System.out.println("Enter comand again: ");
+                        break;
+                    case "k":
+                        System.out.print("Enter index of element: ");
+                        int indexToHour = scanner.nextInt();
+                        System.out.println(departmentsList.get(indexToHour).hourDeviationsFromPlan());
+                        System.out.println("Enter comand again: ");
                         break;
                     case "e":
                         finishOfProgram();
@@ -70,7 +92,6 @@ public class Main {
                         break;
                 }
             }
-            System.out.println("Enter comand again: ");
         }
     }
 
