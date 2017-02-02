@@ -1,8 +1,5 @@
 package com.company.OOP.lab2;
 
-/**
- * Created by vadym on 31.01.17.
- */
 public class Department {
     private int planHours;
     private int factHours;

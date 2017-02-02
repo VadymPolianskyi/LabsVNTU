@@ -3,9 +3,6 @@ package com.company.OOP.lab2;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vadym on 31.01.17.
- */
 public class DepartmentsList {
     List<Department> departments;
 

@@ -2,9 +2,6 @@ package com.company.OOP.lab2;
 
 import java.util.Scanner;
 
-/**
- * Created by vadym on 31.01.17.
- */
 public class Main {
 
     private static boolean workOfProgram = true;
