@@ -3,10 +3,12 @@ package com.company.OOP.lab2;
 public class Department {
     private int planHours;
     private int factHours;
+    private String name;
 
-    public Department(int planHours, int factHours) {
+    public Department(int planHours, int factHours, String name) {
         this.planHours = planHours;
         this.factHours = factHours;
+        this.name = name;
     }
 
     public void setPlanHours(int planHours) {
@@ -17,12 +19,20 @@ public class Department {
         this.factHours = factHours;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getPlanHours() {
         return planHours;
     }
 
     public int getFactHours() {
         return factHours;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Integer hourDeviationsFromPlan() {
@@ -35,6 +45,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Fact hours - " + factHours + " and Plan hours - " + planHours;
+        return "Departmen '" + name + "': Fact hours - " + factHours + " and Plan hours - " + planHours;
     }
 }

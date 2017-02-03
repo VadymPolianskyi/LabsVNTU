@@ -32,6 +32,15 @@ public class DepartmentsList {
         return departments.get(index);
     }
 
+    public Department get(String name) {
+        for (Department department: departments) {
+            if(name.equals(department.getName())) {
+                return department;
+            }
+        }
+        return null;
+    }
+
     public Department remove(int index) {
        return departments.remove(index);
     }

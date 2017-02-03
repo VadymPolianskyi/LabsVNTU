@@ -12,14 +12,15 @@ public class Main {
         DepartmentsList departmentsList = new DepartmentsList();
 
         System.out.println("Enter to run:\n" +
-                "'a' - add car time\n" +
-                "'d' - display all elements from list\n" +
-                "'c' - clear list\n" +
-                "'r' - remove element\n" +
-                "'g' - get element to index\n" +
-                "'p' - display all plan hours from list\n" +
-                "'f' - display all fact hours from list\n" +
-                "'s' - display size of list\n" +
+                "'a' - add Department time\n" +
+                "'d' - display all Departments\n" +
+                "'c' - clear all Departments\n" +
+                "'r' - remove Departmen\n" +
+                "'g' - get departmen to index\n" +
+                "'n' - get departmen to name\n" +
+                "'p' - display all plan hours from all Departments\n" +
+                "'f' - display all fact hours from all Departments\n" +
+                "'s' - display count of Departments\n" +
                 "'%' - display deviations from plan in %\n" +
                 "'k' - display deviations from plan in kW/h\n" +
                 "'e' - exit");
@@ -29,11 +30,13 @@ public class Main {
             if (checkComand(comand)) {
                 switch (comand) {
                     case "a":
+                        System.out.print("Enter Departman name: ");
+                        String name = scanner.nextLine();
                         System.out.print("Enter fact hours: ");
                         int factHours = scanner.nextInt();
                         System.out.print("Enter plan hours: ");
                         int planHours = scanner.nextInt();
-                        departmentsList.add(new Department(planHours, factHours));
+                        departmentsList.add(new Department(planHours, factHours, name));
                         System.out.println("Enter comand again: ");
                         break;
                     case "d":
@@ -51,9 +54,20 @@ public class Main {
                         System.out.println("Enter comand again: ");
                         break;
                     case "g":
-                        System.out.print("Enter index of element: ");
+                        System.out.print("Enter index of Departmen: ");
                         int indexToGet = scanner.nextInt();
                         System.out.println(departmentsList.get(indexToGet));
+                        System.out.println("Enter comand again: ");
+                        break;
+                    case "n":
+                        System.out.print("Enter name of Departmen: ");
+                        String nameGet = scanner.nextLine();
+                        Department curentDep = departmentsList.get(nameGet);
+                        if (curentDep == null) {
+                            System.out.println("Can't find this departmen...");
+                        } else {
+                            System.out.println(curentDep);
+                        }
                         System.out.println("Enter comand again: ");
                         break;
                     case "p":
@@ -73,15 +87,25 @@ public class Main {
                         System.out.println("Enter comand again: ");
                         break;
                     case "%":
-                        System.out.print("Enter index of element: ");
-                        int indexToPer = scanner.nextInt();
-                        System.out.println(departmentsList.get(indexToPer).persentDeviationsFromPlan());
+                        System.out.print("Enter name of Departmen: ");
+                        String nameGet1 = scanner.nextLine();
+                        Department curentDep1 = departmentsList.get(nameGet1);
+                        if (curentDep1 == null) {
+                            System.out.println("Can't find this departmen...");
+                        } else {
+                            System.out.println(departmentsList.get(nameGet1).persentDeviationsFromPlan());
+                        }
                         System.out.println("Enter comand again: ");
                         break;
                     case "k":
-                        System.out.print("Enter index of element: ");
-                        int indexToHour = scanner.nextInt();
-                        System.out.println(departmentsList.get(indexToHour).hourDeviationsFromPlan());
+                        System.out.print("Enter name of Departmen: ");
+                        String nameGet2 = scanner.nextLine();
+                        Department curentDep2 = departmentsList.get(nameGet2);
+                        if (curentDep2 == null) {
+                            System.out.println("Can't find this departmen...");
+                        } else {
+                            System.out.println(departmentsList.get(nameGet2).hourDeviationsFromPlan());
+                        }
                         System.out.println("Enter comand again: ");
                         break;
                     case "e":
