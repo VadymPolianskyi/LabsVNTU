@@ -18,6 +18,6 @@ public class Trapezium extends Shape {
 
     @Override
     Double GetArea() {
-        return 0.5 * (c + (d*h));
+        return 0.5 * h *(c + d);
     }
 }

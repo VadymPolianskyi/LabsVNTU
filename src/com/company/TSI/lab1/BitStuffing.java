@@ -4,18 +4,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BitStuffing {
-    private static final int MAX_COUNT_OF_1 = 5;
+    private static final int MAX_COUNT_OF_1 = 7;
 
 
     public static ArrayList<String> doBitStuffing(String numberInHex) {
         ArrayList<Hex> hexNumbs = Hex.stringHexToArrayList(numberInHex);
         ArrayList<Bin> binNumbs = Hex.arrayHexToArrayBin(hexNumbs);
 
+        System.out.println("Bin numbers before bit stuffing:");
+        System.out.println(Arrays.asList(binNumbs));
+
         ArrayList<String> allBinElements = bitStuffingProces(doAllBinElementsList(binNumbs));
 
         binNumbs = Bin.allBinElementsToBinList(allBinElements);
 
+        System.out.println("Bin numbers after bit stuffing:");
+        System.out.println(Arrays.asList(binNumbs));
+
         hexNumbs = Bin.arrayBinToArrayHex(binNumbs);
+        System.out.println("Result in hex:");
         System.out.println(Arrays.asList(hexNumbs));
 
         return allBinElements;

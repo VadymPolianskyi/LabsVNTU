@@ -1,8 +1,14 @@
 package com.company.TSI.lab1;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your hex number: ");
 
-        BitStuffing.doBitStuffing("4A F8 37 E5 97");
+        String numberInHex = sc.nextLine();
+
+        BitStuffing.doBitStuffing(numberInHex);
     }
 }
