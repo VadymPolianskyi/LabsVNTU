@@ -42,8 +42,11 @@ public class Main {
                         System.out.print("Enter h: ");
                         double h1 = scanner.nextDouble();
                         shape = new Trapezium(c, d, h1);
-                        System.out.println("Area of parallelogram: " + shape.GetArea() + "\n");
+                        System.out.println("Area of trapezium: " + shape.GetArea() + "\n");
                         System.out.println("Enter comand again: ");
+                        break;
+                    case "e":
+                        finishOfProgram();
                         break;
                     default:
                         System.out.println("Enter correct comand: \n");
@@ -59,4 +62,8 @@ public class Main {
                 }
                 return true;
             }
+
+    private static void finishOfProgram() {
+        workOfProgram = false;
+    }
 }
