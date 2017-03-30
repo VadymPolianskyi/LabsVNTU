@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Author: vadym
  * Date: 16.02.17
  * Time: 22:16
- */
+*/
 public class Main {
     private static boolean workOfProgram = true;
 
