@@ -32,6 +32,19 @@ public class Vector {
         System.out.println(toString());
     }
 
+    public Vector product(Vector vector) {
+
+        int a = vector.getA();
+        int b = vector.getB();
+        if (this.a %2 != 0 && this.b %2 !=0
+                && a %2 != 0 && b %2 != 0) {
+            System.out.println("Elements of these vectors are not paired");
+            return null;
+        }
+        String name = "product of " + getName() + "and" + vector.getName();
+        return new Vector(name, this.a*a, this.b*b);
+    }
+
     @Override
     public String toString() {
         return "Vector{" +

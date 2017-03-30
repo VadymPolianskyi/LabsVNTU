@@ -42,16 +42,6 @@ public class VectorList {
     }
 
     public Vector product(Vector first, Vector second) {
-        int firstA = first.getA();
-        int firstB = first.getB();
-        int secondA = second.getA();
-        int secondB = second.getB();
-        if (firstA %2 != 0 && firstB %2 !=0
-                && secondA %2 != 0 && secondB %2 != 0) {
-            System.out.println("Elements of these vectors are not paired");
-            return null;
-        }
-        String name = "product of " + first.getName() + "and" + second.getName();
-        return new Vector(name, firstA*secondA, firstB*secondB);
+        return first.product(second);
     }
 }
