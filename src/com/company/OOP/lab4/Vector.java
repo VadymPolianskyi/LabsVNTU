@@ -20,22 +20,14 @@ public class Vector {
         return name;
     }
 
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
-    }
-
     public void print() {
         System.out.println(toString());
     }
 
     public Vector product(Vector vector) {
 
-        int a = vector.getA();
-        int b = vector.getB();
+        int a = vector.a;
+        int b = vector.b;
         if (this.a %2 != 0 && this.b %2 !=0
                 && a %2 != 0 && b %2 != 0) {
             System.out.println("Elements of these vectors are not paired");
